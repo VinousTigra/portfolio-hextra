@@ -32,7 +32,7 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Build
-        run: hugo --minify --baseURL "https://vinoustigra.github.io/"
+       run: hugo --minify --baseURL "https://vinoustigra.github.io/portfolio-hextra/"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
