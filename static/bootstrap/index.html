@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BordoFood</title>
+
+  <!-- Bootstrap 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome CDN -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      padding-top: 70px;
+    }
+
+    .bg-bordo {
+      background-color: #7a1f2b;
+    }
+
+    .text-bordo {
+      color: #7a1f2b;
+    }
+
+    .btn-bordo {
+      background-color: #7a1f2b;
+      color: #ffffff;
+    }
+
+    .btn-bordo:hover {
+      background-color: #5a1620;
+      color: #ffffff;
+    }
+
+    .jumbotron {
+      background-color: #f6e7ea;
+      min-height: 400px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-md navbar-dark bg-bordo fixed-top">
+    <div class="container">
+
+      <a class="navbar-brand fw-bold" href="#home">
+        <i class="fa-solid fa-bowl-food me-2"></i>
+        BordoFood
+      </a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarMenu"
+        aria-controls="navbarMenu"
+        aria-expanded="false"
+        aria-label="Переключить навигацию">
+
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarMenu">
+        <ul class="navbar-nav">
+
+          <li class="nav-item">
+            <a class="nav-link active" href="#home">Главная</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#contacts">Контакты</a>
+          </li>
+
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- Jumbotron -->
+  <header id="home" class="jumbotron d-flex align-items-center">
+    <div class="container text-center">
+
+      <h1 class="display-4 fw-bold text-bordo">
+        Добро пожаловать!
+      </h1>
+
+      <h2 class="h4 fw-normal mt-3">
+        BordoFood — сервис доставки еды из кафе и ресторанов города.
+      </h2>
+
+      <button
+        class="btn btn-bordo btn-lg mt-4"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#feedback">
+
+        Связаться с нами
+      </button>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Информационные блоки -->
+    <section class="container py-5">
+
+      <div class="row g-4 text-center">
+
+        <!-- На мобильных будет первым -->
+        <div class="col-12 col-lg-4 order-2 order-lg-1">
+
+          <i class="fa-solid fa-motorcycle fa-3x text-bordo mb-3"></i>
+
+          <h3 class="h4 fw-bold">
+            Быстрая доставка
+          </h3>
+
+          <p class="text-muted">
+            Курьеры доставляют заказы быстро и аккуратно.
+          </p>
+
+        </div>
+
+        <!-- На мобильных будет вторым -->
+        <div class="col-12 col-lg-4 order-1 order-lg-2">
+
+          <i class="fa-solid fa-utensils fa-3x text-bordo mb-3"></i>
+
+          <h3 class="h4 fw-bold">
+            Любимые рестораны
+          </h3>
+
+          <p class="text-muted">
+            В сервисе собраны популярные кафе и рестораны города.
+          </p>
+
+        </div>
+
+        <div class="col-12 col-lg-4 order-3 order-lg-3">
+
+          <i class="fa-solid fa-credit-card fa-3x text-bordo mb-3"></i>
+
+          <h3 class="h4 fw-bold">
+            Удобная оплата
+          </h3>
+
+          <p class="text-muted">
+            Заказ можно оплатить онлайн или при получении.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Форма обратной связи -->
+    <section class="container py-5">
+
+      <div class="collapse" id="feedback">
+
+        <div class="row justify-content-center">
+
+          <div class="col-12 col-md-8 col-lg-6">
+
+            <form>
+
+              <h2 class="h3 text-center fw-bold mb-4">
+                Форма обратной связи
+              </h2>
+
+              <div class="mb-3">
+                <label for="name" class="form-label">Имя</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  placeholder="Введите имя">
+              </div>
+
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="example@mail.com">
+              </div>
+
+              <div class="mb-3">
+                <label for="message" class="form-label">Сообщение</label>
+                <textarea
+                  class="form-control"
+                  id="message"
+                  rows="4"
+                  placeholder="Введите сообщение"></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-bordo w-100">
+                Отправить
+              </button>
+
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer id="contacts" class="bg-bordo text-white py-4 d-none d-md-block">
+
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-md-4">
+          <strong>Телефон:</strong><br>
+          +7 (900) 123-45-67
+        </div>
+
+        <div class="col-md-4">
+          <strong>Email:</strong><br>
+          hello@bordofood.ru
+        </div>
+
+        <div class="col-md-4">
+          <strong>Адрес:</strong><br>
+          г. Санкт-Петербург, Невский проспект, 10
+        </div>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+  <!-- Bootstrap JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
