@@ -1,0 +1,49 @@
+title: Портфолио Шулеповой В.Д.
+baseURL: "https://vinoustigra.github.io/"
+module:
+  imports:
+    - path: github.com/imfing/hextra
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+  highlight:
+    noClasses: false
+
+menu:
+  main:
+    - name: Портфолио
+      pageRef: /docs
+      weight: 1
+    - name: Обо мне
+      pageRef: /docs/about
+      weight: 2
+    - name: Проекты
+      pageRef: /docs/projects
+      weight: 3
+    - name: Контакты
+      pageRef: /docs/contacts
+      weight: 4
+    - name: Search
+      weight: 5
+      params:
+        type: search
+    - name: GitHub
+      weight: 6
+      url: "https://github.com/vinoustigra"
+      params:
+        icon: github
+
+params:
+  navbar:
+    displayTitle: true
+    displayLogo: false
+
+  footer:
+    displayCopyright: false
+    displayPoweredBy: false
+
+  editURL:
+    enable: false
