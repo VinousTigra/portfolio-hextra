@@ -23,7 +23,7 @@ Host: meowfacts.herokuapp.com
 
 Сервер вернул ответ со статусом 200 OK и JSON-данными.
 
-![GET через Telnet](/portfolio-hextra/images/http/telnet-get.png)
+<img src="/portfolio-hextra/images/http/telnet-get.png" alt="GET через Telnet">
 
 ---
 
@@ -45,8 +45,7 @@ Host: postman-echo.com
 ```
 
 Сервер вернул ответ со статусом 200 OK.
-
-![GET через Ncat](/portfolio-hextra/images/http/ncat-get.png)
+<img src="/portfolio-hextra/images/http/ncat-get.png" alt="GET через Ncat">
 
 ---
 
@@ -68,7 +67,8 @@ Host: postman-echo.com
 
 Сервер успешно обработал запрос и вернул ответ со статусом 200 OK.
 
-![POST через Ncat](/portfolio-hextra/images/http/ncat-post.png)
+
+<img src="/portfolio-hextra/images/http/ncat-post.png" alt="POST через Ncat">
 
 ---
 
@@ -82,7 +82,8 @@ curl.exe https://postman-echo.com/get?name=Tigra
 
 Сервер вернул JSON-ответ.
 
-![GET через cURL](/portfolio-hextra/images/http/curl-get.png)
+
+<img src="/portfolio-hextra/images/http/curl-get.png" alt="GET через cURL">
 
 ---
 
@@ -102,7 +103,7 @@ curl.exe -X POST "https://postman-echo.com/post" -H "Content-Type: application/j
 
 Сервер успешно обработал запрос и вернул JSON-ответ.
 
-![POST через cURL](/portfolio-hextra/images/http/curl-post.png)
+<img src="/portfolio-hextra/images/http/curl-post.png" alt="POST через cURL">
 
 ---
 
@@ -126,4 +127,4 @@ VAL_NM_RQ = R01235
 
 Сервер вернул XML-документ с курсом доллара США за выбранный период.
 
-![GET через Postman к API Банка России](/portfolio-hextra/images/http/postman-cbr.png)
+<img src="/portfolio-hextra/images/http/postman-cbr.png" alt="GET через Postman к API Банка России">
