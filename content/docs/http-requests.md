@@ -1,28 +1,27 @@
 ---
+title: HTTP-запросы
+---
 
-## title: HTTP-запросы
-
-# Протокол HTTP.
-
+# Протокол HTTP. Клиент-серверное взаимодействие
 
 ## GET-запрос через Telnet
 
-Для выполнения GET-запроса был использован Telnet. Запрос был отправлен к публичному API `meowfacts.herokuapp.com`.
+Для выполнения GET-запроса был использован Telnet.
 
-Команда подключения:
+Команда подключения
 
-```powershell
+```text
 telnet meowfacts.herokuapp.com 80
 ```
 
-Текст HTTP-запроса:
+Запрос
 
-```http
+```text
 GET / HTTP/1.1
 Host: meowfacts.herokuapp.com
 ```
 
-В результате сервер вернул ответ со статусом `HTTP/1.1 200 OK` и JSON-данными.
+Сервер вернул ответ со статусом 200 OK и JSON-данными.
 
 ![GET через Telnet](/portfolio-hextra/images/http/telnet-get.png)
 
@@ -30,22 +29,22 @@ Host: meowfacts.herokuapp.com
 
 ## GET-запрос через Ncat
 
-Для выполнения HTTPS-запроса в CLI был использован `ncat`.
+Для выполнения HTTPS-запроса использовался Ncat.
 
-Команда подключения:
+Команда подключения
 
-```powershell
+```text
 ncat --ssl postman-echo.com 443
 ```
 
-Текст HTTP-запроса:
+Запрос
 
-```http
+```text
 GET /get?name=Tigra HTTP/1.1
 Host: postman-echo.com
 ```
 
-В результате сервер вернул ответ со статусом `HTTP/1.1 200 OK` и JSON-данными.
+Сервер вернул ответ со статусом 200 OK.
 
 ![GET через Ncat](/portfolio-hextra/images/http/ncat-get.png)
 
@@ -53,21 +52,21 @@ Host: postman-echo.com
 
 ## POST-запрос через Ncat
 
-Для отправки POST-запроса через CLI был использован `ncat`. В теле запроса передавались JSON-данные.
+Для отправки POST-запроса использовался Ncat.
 
-Команда:
+Команда
 
-```powershell
+```text
 "POST /post HTTP/1.1`r`nHost: postman-echo.com`r`nContent-Type: application/json`r`nContent-Length: 34`r`n`r`n{""name"":""john"",""job"":""programmer""}`r`n" | ncat --ssl postman-echo.com 443
 ```
 
-Тело запроса:
+Тело запроса
 
-```json
+```text
 {"name":"john","job":"programmer"}
 ```
 
-Сервер успешно обработал запрос и вернул ответ со статусом `HTTP/1.1 200 OK`.
+Сервер успешно обработал запрос и вернул ответ со статусом 200 OK.
 
 ![POST через Ncat](/portfolio-hextra/images/http/ncat-post.png)
 
@@ -75,15 +74,13 @@ Host: postman-echo.com
 
 ## GET-запрос через cURL
 
-GET-запрос был выполнен с помощью утилиты `curl`.
+Команда
 
-Команда:
-
-```powershell
+```text
 curl.exe https://postman-echo.com/get?name=Tigra
 ```
 
-В ответе сервер вернул JSON-объект с параметром `name`.
+Сервер вернул JSON-ответ.
 
 ![GET через cURL](/portfolio-hextra/images/http/curl-get.png)
 
@@ -91,21 +88,19 @@ curl.exe https://postman-echo.com/get?name=Tigra
 
 ## POST-запрос через cURL
 
-POST-запрос был выполнен с помощью `curl`. В запросе использовался заголовок `Content-Type: application/json`, а в теле передавались JSON-данные.
+Команда
 
-Команда:
-
-```powershell
+```text
 curl.exe -X POST "https://postman-echo.com/post" -H "Content-Type: application/json" -d "{\"name\":\"john\",\"job\":\"programmer\"}"
 ```
 
-Тело запроса:
+Тело запроса
 
-```json
+```text
 {"name":"john","job":"programmer"}
 ```
 
-В результате сервер вернул отправленные данные в ответе.
+Сервер успешно обработал запрос и вернул JSON-ответ.
 
 ![POST через cURL](/portfolio-hextra/images/http/curl-post.png)
 
@@ -113,17 +108,15 @@ curl.exe -X POST "https://postman-echo.com/post" -H "Content-Type: application/j
 
 ## GET-запрос в Postman к API Банка России
 
-Для работы с HTTP API был установлен Postman.
+Для получения курса валют был использован Postman.
 
-С помощью Postman выполнен GET-запрос к API Банка России для получения курса доллара США за выбранный период.
-
-URL запроса:
+URL запроса
 
 ```text
 https://www.cbr.ru/scripts/XML_dynamic.asp?date_req1=01/06/2026&date_req2=10/06/2026&VAL_NM_RQ=R01235
 ```
 
-Параметры запроса:
+Параметры
 
 ```text
 date_req1 = 01/06/2026
@@ -131,6 +124,6 @@ date_req2 = 10/06/2026
 VAL_NM_RQ = R01235
 ```
 
-В результате сервер вернул XML-документ со значениями курса доллара США за указанный период. Запрос был выполнен успешно, статус ответа — `200 OK`.
+Сервер вернул XML-документ с курсом доллара США за выбранный период.
 
 ![GET через Postman к API Банка России](/portfolio-hextra/images/http/postman-cbr.png)
