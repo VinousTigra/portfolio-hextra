@@ -1,0 +1,37 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: electolibrary-postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: electolibrary
+    ports:
+      - "5432:5432"
+    volumes:
+      - electolibrary_pg_data:/var/lib/postgresql/data
+
+  backend:
+    build:
+      context: ./backend
+    container_name: electolibrary-backend
+    environment:
+      DATABASE_URL: postgresql://postgres:postgres@postgres:5432/electolibrary
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+    volumes:
+      - ./backend/uploads:/app/uploads
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: electolibrary-frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+
+volumes:
+  electolibrary_pg_data:
